@@ -1,0 +1,32 @@
+{% extends 'sale/base.html' %}
+{% block body %}
+<div class="container">
+
+<form class="form-horizontal" role="form" action="" method="post">
+
+    <input type="hidden" name="balance" value="{{ balance }}">
+
+    <div class="form-group">
+        <div class="col-sm-offset- col-sm-10">
+            {% csrf_token %}
+            {{form.as_p}}
+        </div>
+        <div class="col-sm-offset- col-sm-10">
+            <a href="/cash_balance/" class="btn btn-primary btn-sm" role="button">Submit</a>
+        </div>
+    </div>
+</form>
+
+<div class="btn-group btn-group-md" role="group" aria-label="Basic example">
+
+      <a href="/stock/" class="btn btn-primary btn-md" role="button">Stock<span class="badge badge-light">#</span></a>
+      <a href="/sale/" class="btn btn-primary btn-md" role="button">Sale<span class="badge badge-light">#</span></a>
+      <a href="/expenses/" class="btn btn-primary btn-md" role="button">Expenses<span class="badge badge-light">#</span></a>
+      <a href="/sale/home/" class="btn btn-primary btn-md" role="button"> Home <span class="badge badge-light"></span></a>
+
+</div>
+
+</div>
+
+
+{% endblock  %}

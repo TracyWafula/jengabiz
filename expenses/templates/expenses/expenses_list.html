@@ -1,0 +1,60 @@
+{% extends 'sale/base.html' %}
+{% block body %}
+<div class="container">
+
+<div class="row">
+        <div class="col-sm-12">
+            <ul class="nav nav-pills" style="margin-bottom: 10px;">
+                <li role="presentation"><a href="{% url 'expenses:expenses-add' %}" class="btn btn-primary btn-md glyphicon glyphicon-plus" aria-hidden="true" role="button"> Add </a></li>
+            </ul>
+        </div>
+</div>
+
+    <div class="row">
+
+        <div class="col-sm-8">
+
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <table class="table">
+                     <caption>Expenses</caption>
+                       <thead class="thead-dark">
+                            <tr>
+
+                                <th>Name</th>
+                                <th>Quantity</th>
+								<th>Unit_price</th>
+								<th>Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for expenses in all_expenses %}
+                                <tr>
+                                    <td>{{ expenses.name}}</td>
+									<td>{{ expenses.quantity}}</td>
+									<td>{{ expenses.unit_price}}</td>
+									<td>{{ expenses.amount}}</td></tr>
+                            {% endfor %}
+                        </tbody>
+                        <tfoot class="tfoot-inverse">
+                            <tr>
+                                <th>Total</th>
+                                <tr><td>{{ expenses.total_amount }}</td></tr>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="btn-group btn-group-md" role="group" aria-label="Basic example">
+      <a href="/stock/" class="btn btn-primary btn-md" role="button"> Stock <span class="badge  badge-light"> Ksh------ </span></a>
+      <a href="/sale/" class="btn btn-primary btn-md" role="button"> Sale <span class="badge  badge-light"> Ksh------ </span></a>
+      <a href="/cash_balance/" class="btn btn-primary btn-md" role="button"> Balance <span class="badge  badge-light"> Ksh------ </span></a>
+        <a href="/sale/home/" class="btn btn-primary btn-md" role="button"> Home <span class="badge badge-light"></span></a>
+    </div>
+</div>
+
+{% endblock  %}

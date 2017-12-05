@@ -1,0 +1,33 @@
+{% extends 'sale/base.html' %}
+{% block title %}Add a New Item{% endblock %}
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8 col-md-4">
+
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h3>New Expense</h3>
+                    {% if error_message %}
+                        <p><strong>{{ error_message }}</strong></p>
+                    {% endif %}
+                    <form class="form-horizontal" role="form" action="" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="expenses" value="{{ expenses }}">
+                        {% include 'sale/form_template.html' %}
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <a href="/expenses/" class="btn btn-primary btn-sm" role="button">Submit</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

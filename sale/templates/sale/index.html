@@ -1,0 +1,68 @@
+<!-- loads the path to your static file-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+</head>
+{% block body  %}
+<body >
+<div class="pos-f-t">
+  <div class="collapse" id="navbarToggleExternalContent">
+    <div class="bg-dark p-4">
+        <ul class="nav navbar-nav ">
+        <li><a href="/sale/about"><span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span><h6 class="text-white">About</h6></a></li>
+        <li><a href="/sale/login_user"><span class="glyphicon glyphicon-off" aria-hidden="true"></span><h6 class="text-white">Logout</h6></a></li>
+        </ul>
+    </div>
+  </div>
+  <nav class="navbar navbar-dark bg-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </nav>
+</div>
+<div class="row" style="height: 480px; width: 75%; position:relative; left:240px; top:150px;">
+  <div class="col-sm-5">
+    <div class="card text-white bg-dark ">
+      <div class="card-body">
+        <h4 class="card-title">Sales</h4>
+        <a href="/sale/" class="btn btn-primary btn-sm" role="button">View Details</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-5">
+    <div class="card text-white bg-dark">
+      <div class="card-body">
+        <h4 class="card-title">Stock</h4>
+        <a href="/stock/detail/" class="btn btn-primary btn-sm" role="button">View Details</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-5">
+    <div class="card text-white bg-dark">
+      <div class="card-body">
+        <h4 class="card-title">Expenses</h4>
+        <a href="/expenses/" class="btn btn-primary">View Details</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-5">
+    <div class="card text-white bg-dark">
+      <div class="card-body">
+        <h4 class="card-title"> Balance </h4>
+        <a href="/cash_balance/" class="btn btn-primary">View Details</a>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</body>
+</html>
+{% endblock  %}
+

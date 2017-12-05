@@ -1,0 +1,68 @@
+{% extends 'sale/base.html' %}
+{% block body %}
+<div class="container">
+
+<div class="row">
+        <div class="col-sm-12">
+            <ul class="nav nav-pills" style="margin-bottom: 10px;">
+                 <a href="{% url 'stock:add_stock' %}" class="btn btn-primary btn-md glyphicon glyphicon-plus" aria-hidden="true" role="button"> Add </a>
+            </ul>
+        </div>
+</div>
+
+    <div class="row">
+
+        <div class="col-sm-8">
+
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <a href="{% url 'stock:detail' stock.id %}"></a>
+                    <table class="table">
+                     <caption>Stock</caption>
+                       <thead class="thead-dark">
+                            <tr>
+                                <th>Date</th>
+                                <th>Product</th>
+                                <th>Quantity</th>
+                                <th>Unit</th>
+                                <th>Unit_price</th>
+								<th>Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for stock in all_stock %}
+                                <tr>
+                                    <td>{{ stock.date }}</td>
+                                    <td>{{ stock.product}}</td>
+									<td>{{ stock.quantity}}</td>
+									<td>{{ stock.unit}}</td>
+									<td>{{ stock.unit_price}}</td>
+									<td>{{ stock.amount}}</td></tr>
+                            {% endfor %}
+                        </tbody>
+                        <tfoot class="tfoot-inverse">
+
+                            <tr>
+                                <th>Total</th>
+                                <td>{{ }}  </td>
+                            </tr>
+
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="btn-group btn-group-md" role="group" aria-label="Basic example">
+      <a href="/sale/" class="btn btn-primary btn-md" role="button"> Sale <span class="badge badge-light"> Ksh------ </span></a>
+      <a href="/expenses/" class="btn btn-primary btn-md" role="button"> Expenses <span class="badge badge-light"> Ksh------ </span></a>
+      <a href="/cash_balance/" class="btn btn-primary btn-md" role="button"> Balance <span class="badge badge-light"> Ksh------ </span></a>
+        <a href="/sale/home/" class="btn btn-primary btn-md" role="button"> Home <span class="badge badge-light"></span></a>
+    </div>
+</div>
+
+</div>
+
+	{% endblock  %}
